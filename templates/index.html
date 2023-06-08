@@ -21,7 +21,7 @@
     <div class="container mt-5">
         <h1 style="color:white">HealthCareBot</h1>
         <div class="chat-box mt-3">
-            <!-- Chat messages will be added here dynamically -->
+            <!-- Chat messages will be added here -->
         </div>
         <div class="form-group mt-3">
             <select class="form-control" id="health-condition">
@@ -46,15 +46,6 @@
     </div>
 
     <script>
-        setInterval(highlightAll, 1000);
-
-        // Function to highlight code using highlight.js library
-        function highlightAll() {
-            document.querySelectorAll("pre code").forEach(block => {
-                hljs.highlightBlock(block);
-            });
-        }
-
         const chatBox = document.querySelector(".chat-box");
         const healthConditionSelect = document.querySelector("#health-condition");
         const severityLevelSelect = document.querySelector("#severity-level");
