@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
+
 <head>
     <title>HealthCareBot</title>
     <meta charset="utf-8">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 </head>
+
 <body>
     <div class="container mt-5">
         <h1 style="color:white">HealthCareBot</h1>
@@ -70,9 +72,13 @@
         }
 
         function sendMessage() {
-            const healthCondition = healthConditionSelect.value;
-            const severityLevel = severityLevelSelect.value;
-            const message = messageInput.value.trim() + ` [ health condition:${healthCondition}, severity:${severityLevel} ]`;
+            const healthCondition = $("#health-condition").val();
+            const severityLevel = $("#severity-level").val();
+            let message = $("#message-input").val().trim();
+
+            if (healthCondition !== "" || severityLevel !== "") {
+                message += ` [ health condition:${healthCondition}, severity:${severityLevel} ]`;
+            }
 
             if (message !== "") {
                 addMessage(message, true);
@@ -112,5 +118,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
